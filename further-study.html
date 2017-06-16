@@ -47,6 +47,8 @@
 <script>
     "use strict";
 
+
+
     var myImage = $("#coffee_image");
     var myRevenueMessage = $("#revenue");
     var drinksOrdered = [];
@@ -56,6 +58,11 @@
     // Append the drink_type to drinks_ordered and use console.log to view
     // the output.
 
+    // myImage.fadeToggle(3000);
+    myImage.slideUp(3000);
+    myImage.slideDown(3000);
+    myImage.fadeOut(3000);
+    
     function makeCoffee(drinkType) {
         drinksOrdered.push(drinkType);
         console.log(drinksOrdered);
@@ -63,8 +70,16 @@
         var myRevenue = revenue();
         myRevenueMessage.html("Today's revenues: " + myRevenue);
 
+        myImage.fadeIn(3000);
+      
+        // myImage.fadeToggle(3000);
+        // myImage.fadeToggle(3000);
+   
+
         // myRevenueMessage.innerHTML = "Today's revenues: " + myRevenue;
         myImage.attr('src', "static/coffee_machine.jpg");
+
+
 
         setTimeout(function () {
             myImage.attr('src', "static/coffee_mug.jpg");
@@ -74,6 +89,8 @@
             myImage.attr('src', "static/coffee_beans.jpg");
         }, 4000);
     }
+
+        
 
 
     // Create variables for Espresso, Latte, and Hot Chocolate;
